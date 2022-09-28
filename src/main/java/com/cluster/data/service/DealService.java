@@ -10,9 +10,16 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.UUID;
 
 public interface DealService {
 
     DealDTO save(DealDTO dealDTO);
+
+    List<DealDTO> batchSave(List<DealDTO> dealDTOList);
+
+    Optional<DealDTO> findByUniqueId(UUID uniqueId);
+
+    Page<DealDTO> findAll(Pageable pageable);
 
 }

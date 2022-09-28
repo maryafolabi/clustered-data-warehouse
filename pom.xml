@@ -16,6 +16,7 @@
 	<properties>
 		<java.version>11</java.version>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
+        <csv.version>1.8</csv.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -71,6 +72,11 @@
             <artifactId>mapstruct-processor</artifactId>
             <version>${mapstruct.version}</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-csv</artifactId>
+            <version>${csv.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
