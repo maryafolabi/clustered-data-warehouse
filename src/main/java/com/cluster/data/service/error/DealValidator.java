@@ -1,7 +1,9 @@
 package com.cluster.data.service.error;
 
 import com.cluster.data.annotation.Validator;
+import com.cluster.data.repository.DealRepository;
 import com.cluster.data.service.dto.DealDTO;
+import lombok.AllArgsConstructor;
 import org.springframework.util.StringUtils;
 
 import java.util.Currency;

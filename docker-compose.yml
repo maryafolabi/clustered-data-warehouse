@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  db:
+    image: "postgres:13"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=postgres
+  app-server:
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/postgres
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app
+    expose:
+      - "8081"
+    command: mvn clean spring-boot:run
+    ports:
+      - "8081:8081"
+    restart: always
+    depends_on:
+      - db
+    volumes:
+      - ~/.m2:/root/.m2
+      - .:/app

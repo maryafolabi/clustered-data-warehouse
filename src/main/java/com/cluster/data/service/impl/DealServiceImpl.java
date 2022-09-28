@@ -11,11 +11,14 @@ import com.cluster.data.service.mapper.DealMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import java.util.*;
 
 @Service
+@Transactional(propagation = Propagation.REQUIRES_NEW)
 public class DealServiceImpl implements DealService {
 
     private final DealValidator dealValidator;
