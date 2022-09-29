@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "05dc83e6-b7a1-47dd-b8ab-4f684026d230",
+		"name": "ProgressSoft",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15909284"
+	},
+	"item": [
+		{
+			"name": "Deals",
+			"item": [
+				{
+					"name": "create deal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"uniqueId\": null,\n    \"fromCurrency\": \"NGN\",\n    \"toCurrency\": \"USD\",\n    \"timestamp\": \"2021-05-29T23:51:29.091Z\",\n    \"amount\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/deal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"deal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByUniqueId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/deal/e96ddd79-4778-4a1a-a88a-94b592c866bd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"deal",
+								"e96ddd79-4778-4a1a-a88a-94b592c866bd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create deals",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n    \"fromCurrency\": \"NGN\",\n    \"toCurrency\": \"USD\",\n    \"timestamp\": \"2021-05-29T23:51:29.091Z\",\n    \"amount\": 4000\n},\n{\n    \"fromCurrency\": \"NGN\",\n    \"toCurrency\": \"USD\",\n    \"timestamp\": \"2021-05-29T23:51:29.091Z\",\n    \"amount\": 6000\n}\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/deals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"deals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all deals",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/deals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"deals"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
